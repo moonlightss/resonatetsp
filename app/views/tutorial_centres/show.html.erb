@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @tutorial_centre.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @tutorial_centre.address %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @tutorial_centre.phone %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @tutorial_centre.website %>
+</p>
+
+<%= link_to 'Edit', edit_tutorial_centre_path(@tutorial_centre), class: "btn btn-link" %> |
+<%= link_to 'Back', tutorial_centres_path, class: "btn btn-link" %>

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Tutorial Centres</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Website</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tutorial_centres.each do |tutorial_centre| %>
+      <tr>
+        <td><%= tutorial_centre.name %></td>
+        <td><%= tutorial_centre.address %></td>
+        <td><%= tutorial_centre.phone %></td>
+        <td><%= tutorial_centre.website %></td>
+        <td><%= link_to 'Show', tutorial_centre, class: "btn btn-link" %></td>
+        <td><%= link_to 'Edit', edit_tutorial_centre_path(tutorial_centre), class: "btn btn-link" %></td>
+        <td><%= link_to 'Destroy', tutorial_centre, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tutorial centre', new_tutorial_centre_path, class: "btn btn-link" %>

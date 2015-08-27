@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Centre:</strong>
+  <%= @tutorial.Centre %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @tutorial.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @tutorial.address %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @tutorial.phone %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @tutorial.website %>
+</p>
+
+<%= link_to 'Edit', edit_tutorial_path(@tutorial), class: "btn btn-link" %> |
+<%= link_to 'Back', tutorials_path, class: "btn btn-link" %>
