@@ -21,7 +21,7 @@
         <td><%= tutorial_centre.name %></td>
         <td><%= tutorial_centre.address %></td>
         <td><%= tutorial_centre.phone %></td>
-        <td><%= tutorial_centre.website %></td>
+        <td><%= link_to tutorial_centre.website, tutorial_centre.website %></td>
         <td><%= link_to 'Show', tutorial_centre, class: "btn btn-link" %></td>
         <td><%= link_to 'Edit', edit_tutorial_centre_path(tutorial_centre), class: "btn btn-link" %></td>
         <td><%= link_to 'Destroy', tutorial_centre, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %></td>
