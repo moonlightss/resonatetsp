@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   resources :reviews, except: [:show, :index]
 
   devise_for :users
-  resources :tutorial_centres
+  resources :tutorial_centres do
+    resources :reviews, except: [:show, :index]
+  end
+
   resources :tutorials
   
   get 'pages/about'

@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:edit, :update, :destroy]
+  before_action :set_tutorial_centre
   before_action :authenticate_user!
 
 
@@ -18,6 +19,7 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.user_id = current_user.id
+    @review.tutorial_centre_id = @tutorial_centre.id
 
     respond_to do |format|
       if @review.save
@@ -60,8 +62,13 @@ class ReviewsController < ApplicationController
       @review = Review.find(params[:id])
     end
 
+    def set_tutorial_centre
+      @tutorial_centre = TutorialCentre.find(params[:tutorial_centre_id])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
       params.require(:review).permit(:rating, :comment)
     end
 end
+
