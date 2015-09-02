@@ -20,5 +20,7 @@
   <%= @tutorial_centre.website %>
 </p>
 
+<%= link_to "Write a Review", new_tutorial_centre_review_path(@tutorial_centre), class: "btn btn-primary" %>
+
 <%= link_to 'Edit', edit_tutorial_centre_path(@tutorial_centre), class: "btn btn-link" %> |
 <%= link_to 'Back', tutorial_centres_path, class: "btn btn-link" %>
