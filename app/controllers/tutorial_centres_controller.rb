@@ -10,6 +10,7 @@ class TutorialCentresController < ApplicationController
   # GET /tutorial_centres/1
   # GET /tutorial_centres/1.json
   def show
+    @reviews = Review.where(tutorial_centre_id: @tutorial_centre.id)
   end
 
   # GET /tutorial_centres/new

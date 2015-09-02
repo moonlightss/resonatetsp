@@ -1,26 +1,42 @@
-<%= image_tag @tutorial_centre.image_url %>
+<div class="row">
+	<div class="col-md-3">
+		<%= image_tag @tutorial_centre.image_url %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @tutorial_centre.name %>
-</p>
+		<h2>
+ 		 <%= @tutorial_centre.name %>
+		</h2>
 
-<p>
-  <strong>Address:</strong>
-  <%= @tutorial_centre.address %>
-</p>
+		<p>
+  		 <strong>Address:</strong>
+  		 <%= @tutorial_centre.address %>
+		</p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @tutorial_centre.phone %>
-</p>
+		<p>
+  		 <strong>Phone:</strong>
+  		 <%= @tutorial_centre.phone %>
+		</p>
 
-<p>
-  <strong>Website:</strong>
-  <%= @tutorial_centre.website %>
-</p>
+		<p>
+  		 <strong>Website:</strong>
+  	 	 <%= link_to @tutorial_centre.website, @tutorial_centre.website %>
+		</p>
 
-<%= link_to "Write a Review", new_tutorial_centre_review_path(@tutorial_centre), class: "btn btn-primary" %>
+		<%= link_to "Write a Review", new_tutorial_centre_review_path(@tutorial_centre), class: "btn btn-primary" %>
+	
+	</div>
+
+	<div class="col-md-9">
+	 <% if @reviews.blank? %>
+		<h3>No reviews yet. Be the first to write one!</h3>
+     <% else %>
+     	<% @reviews.each do |review| %>
+		<p><%= review.rating %></p>
+		<p><%= review.comment %></p>
+		<% end %>
+     <% end %>
+		
+	</div>
+</div>
 
 <%= link_to 'Edit', edit_tutorial_centre_path(@tutorial_centre), class: "btn btn-link" %> |
 <%= link_to 'Back', tutorial_centres_path, class: "btn btn-link" %>
