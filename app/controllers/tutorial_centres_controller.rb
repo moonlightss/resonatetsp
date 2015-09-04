@@ -10,7 +10,12 @@ class TutorialCentresController < ApplicationController
   # GET /tutorial_centres/1
   # GET /tutorial_centres/1.json
   def show
-    @reviews = Review.where(tutorial_centre_id: @tutorial_centre.id)
+    @reviews = Review.where(tutorial_centre_id: @tutorial_centre.id).order("created_at DESC")
+    if @reviews.blank?
+      @avg_rating = 0
+    else 
+      @avg_rating = @reviews.average(:rating).round(2)
+    end
   end
 
   # GET /tutorial_centres/new
