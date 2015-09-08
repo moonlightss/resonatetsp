@@ -1,5 +1,7 @@
 class TutorialCentresController < ApplicationController
   before_action :set_tutorial_centre, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :check_user, except: [:index, :show]
 
   # GET /tutorial_centres
   # GET /tutorial_centres.json
@@ -71,6 +73,12 @@ class TutorialCentresController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_tutorial_centre
       @tutorial_centre = TutorialCentre.find(params[:id])
+    end
+
+    def check_user
+      unless current_user.admin?
+        redirect_to root_url, alert: "Sorry, only admin can do that!"
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
