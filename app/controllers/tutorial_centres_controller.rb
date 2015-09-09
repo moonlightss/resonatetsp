@@ -1,10 +1,18 @@
 class TutorialCentresController < ApplicationController
   before_action :set_tutorial_centre, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :check_user, except: [:index, :show]
+  before_action :authenticate_user!, except: [:search, :index, :show]
+  before_action :check_user, except: [:search, :index, :show]
 
   # GET /tutorial_centres
   # GET /tutorial_centres.json
+  def search
+    if params[:search].present?
+    @tutorial_centres = TutorialCentre.search(params[:search])
+    else
+    @tutorial_centres = TutorialCentre.all
+    end
+  end
+
   def index
     @tutorial_centres = TutorialCentre.all
   end
