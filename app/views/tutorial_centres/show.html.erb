@@ -25,6 +25,17 @@
 		</p>
 
 		<%= link_to "Write a Review", new_tutorial_centre_review_path(@tutorial_centre), class: "btn btn-primary" %>
+
+      <br>
+      <br>
+
+      <iframe
+        width="300"
+        height="300"
+        frameborder="0" style="border:0"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBQNGNFWuQRgCPoW-GLaoHk3l2rzV8WpFw
+        &q=<%= @tutorial_centre.address.parameterize %>&zoom=15">
+      </iframe>
 	
 	</div>
 
