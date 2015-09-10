@@ -24,7 +24,11 @@
   	 	 <%= link_to @tutorial_centre.website, @tutorial_centre.website %>
 		</p>
 
-		<%= link_to "Write a Review", new_tutorial_centre_review_path(@tutorial_centre), class: "btn btn-primary" %>
+		<%= link_to new_tutorial_centre_review_path(@tutorial_centre), class: "btn btn-primary", data: { no_turbolink: true } do %>
+      <i class="glyphicon glyphicon-pencil"></i> Write a Review
+    <% end %>
+
+    <%#= link_to "Write a Review", new_tutorial_centre_review_path(@tutorial_centre), class: "btn btn-primary" %>
 
       <br>
       <br>
