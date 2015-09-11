@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :sections
+  resources :categories
   resources :reviews, except: [:show, :index]
 
   devise_for :users

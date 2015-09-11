@@ -36,8 +36,13 @@
 <br>
 
 <% if user_signed_in? && current_user.admin? %>
+
   <%= link_to new_tutorial_centre_path, class: "btn btn-primary", data: { no_turbolink: true } do %>
     <i class="glyphicon glyphicon-home"></i> New Tutorial Centre
+  <% end %>
+
+  <%= link_to new_category_path, class: "btn btn-primary", data: { no_turbolink: true } do %>
+    <i class="glyphicon glyphicon-list-alt"></i> New Category
   <% end %>
   <%#= link_to 'New Tutorial centre', new_tutorial_centre_path, class: "btn btn-link" %>
 <% end %>

@@ -14,7 +14,12 @@ class TutorialCentresController < ApplicationController
   end
 
   def index
-    @tutorial_centres = TutorialCentre.all
+    if params[:category].blank?
+      @tutorial_centres = TutorialCentre.all.order("created_at DESC")
+    else
+      @category_id = Category.find_by(name: params[:category]).id
+      @tutorial_centres = TutorialCentre.where(category_id: @category_id).order("created_at DESC")
+    end
   end
 
   # GET /tutorial_centres/1
@@ -91,6 +96,6 @@ class TutorialCentresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tutorial_centre_params
-      params.require(:tutorial_centre).permit(:name, :address, :phone, :website, :image)
+      params.require(:tutorial_centre).permit(:name, :category_id, :address, :phone, :website, :image)
     end
 end

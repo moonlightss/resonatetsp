@@ -11,5 +11,7 @@ class TutorialCentre < ActiveRecord::Base
      validates :website, format: { with: /\Ahttps?:\/\/.*\z/,
     message: "must start with http:// or https://" }
 
+    belongs_to :category
+
 
 end
