@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pages/university_ambassadors'
+
   resources :sections
   resources :categories
   resources :reviews, except: [:show, :index]

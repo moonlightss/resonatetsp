@@ -1,4 +1,7 @@
 class PagesController < ApplicationController
+  def university_ambassadors
+  end
+
   def about
   end
 
