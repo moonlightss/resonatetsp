@@ -4,34 +4,53 @@
   Leave reviews and ratings to let others know what you think!</h3>
 </div>  
 
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Phone</th>
-      <th>Website</th>
-      <% if user_signed_in? && current_user.admin? %>
-        <th colspan="2"></th>
-      <% end %>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @tutorial_centres.each do |tutorial_centre| %>
-      <tr>
-        <td><%= link_to tutorial_centre.name, tutorial_centre %></td>
-        <td><%= tutorial_centre.address %></td>
-        <td><%= tutorial_centre.phone %></td>
-        <td><%= link_to tutorial_centre.website, tutorial_centre.website %></td>
-        <% if user_signed_in? && current_user.admin? %>
-          <td><%= link_to 'Edit', edit_tutorial_centre_path(tutorial_centre), class: "btn btn-link" %></td>
-          <td><%= link_to 'Destroy', tutorial_centre, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container">
+  <div class="row">
+    <h2 class="text-center">Most Reviewed Sites</h2>
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <div class="box">
+                        <div class="box-content">
+                            <h1 class="tag-title"><a href="/tutorial_centres/1">Arch Education</a></h1>
+                            <hr />
+                            <h3>English</h3>
+                            <br>
+                            <p>For students aged 7-18, looking towards UK, US and HK school and university admissions, we provide 360o guidance by leveraging on our breadth of offerings, including Skills Enrichment (Think, Speak, Read and Write programs).</p>
+                            <br />
+                            <a href="/tutorial_centres/1" class="btn btn-block btn-primary">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="box">
+                        <div class="box-content">
+                            <h1 class="tag-title"><a href="/tutorial_centres/2">Capstone</a></h1>
+                            <hr />
+                            <h3>Debate</h3>
+                            <br>
+                            <p>Our vision is to become the most esteemed education consultancy in Asia for ambitious students. We neither aim to be the largest nor the most profitable but are driven to become the first-choice education partner for students and parents seeking the very best education support and leadership development.
+                            </p>
+                            <br />
+                            <a href="/tutorial_centres/2" class="btn btn-block btn-primary">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="box">
+                        <div class="box-content">
+                            <h1 class="tag-title"><a href="/tutorial_centres/3">ITS Education</a></h1>
+                            <hr />
+                            <p>Everything we do at our schools and advisory offices is centered around our students.
+                                We want our students to find and follow their desired and appropriate academic pathways. We achieve this by employing high quality staff, both teaching and administrative, who care about what our students achieve.</p>
+                            <br />
+                            <a href="/tutorial_centres/3" class="btn btn-block btn-primary">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>           
+        </div>
+  </div>
+</div>
 
 <br>
 
