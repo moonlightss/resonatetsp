@@ -10,7 +10,8 @@
 </head>
 <body>
   
-  <%= render 'layouts/facebook' %>
+  
+
 
   <%= render 'layouts/navbar' %>
   <div class="container-fluid">
@@ -23,6 +24,10 @@
       <% end %>
     <% end %> 
     <%= yield %>
+
+    <%= render 'layouts/facebook' %>
+    <br> 
+    
     <%= render 'layouts/footer' %>
   </div>
 </body>
