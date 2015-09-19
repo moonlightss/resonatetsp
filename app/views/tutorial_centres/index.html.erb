@@ -6,51 +6,54 @@
 
 <div class="container">
   <div class="row">
-    <h2 class="text-center">Most Reviewed Sites</h2>
+    <h2 class="text-center">Tutorial Agencies</h2>
+            <% @tutorial_centres.each do |tutorial_centre| %>
             <div class="row">
                 <div class="col-md-4 text-center">
                     <div class="box">
                         <div class="box-content">
-                            <h1 class="tag-title"><a href="/tutorial_centres/1">Arch Education</a></h1>
-                            <hr />
-                            <h3>English</h3>
-                            <br>
-                            <p>For students aged 7-18, looking towards UK, US and HK school and university admissions, we provide 360o guidance by leveraging on our breadth of offerings, including Skills Enrichment (Think, Speak, Read and Write programs).</p>
-                            <br />
-                            <a href="/tutorial_centres/1" class="btn btn-block btn-primary">Learn more</a>
+                            
+                            <h1 class="tag-title">
+                              <%= link_to tutorial_centre.name, tutorial_centre %>
+                            </h1>
+                            
+                            <hr/>
+                            
+                            <h5>
+                              <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+                              :
+                              <%= tutorial_centre.phone %>
+                            </h5>
+                            
+                            <h5>
+                              <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                              :
+                              <%= link_to tutorial_centre.website, tutorial_centre.website %>
+                            </h5>
+                            
+                            <hr/>                          
+                            
+                            <h3><%= link_to "Learn more", tutorial_centre %> </h3>
                         </div>
+
                     </div>
                 </div>
-                <div class="col-md-4 text-center">
-                    <div class="box">
-                        <div class="box-content">
-                            <h1 class="tag-title"><a href="/tutorial_centres/2">Capstone</a></h1>
-                            <hr />
-                            <h3>Debate</h3>
-                            <br>
-                            <p>Our vision is to become the most esteemed education consultancy in Asia for ambitious students. We neither aim to be the largest nor the most profitable but are driven to become the first-choice education partner for students and parents seeking the very best education support and leadership development.
-                            </p>
-                            <br />
-                            <a href="/tutorial_centres/2" class="btn btn-block btn-primary">Learn more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 text-center">
-                    <div class="box">
-                        <div class="box-content">
-                            <h1 class="tag-title"><a href="/tutorial_centres/3">ITS Education</a></h1>
-                            <hr />
-                            <p>Everything we do at our schools and advisory offices is centered around our students.
-                                We want our students to find and follow their desired and appropriate academic pathways. We achieve this by employing high quality staff, both teaching and administrative, who care about what our students achieve.</p>
-                            <br />
-                            <a href="/tutorial_centres/3" class="btn btn-block btn-primary">Learn more</a>
-                        </div>
-                    </div>
-                </div>
+                <% end %>
+
+
+           
             </div>           
         </div>
+        
   </div>
 </div>
+
+            
+        
+
+
+    
+    
 
 <br>
 

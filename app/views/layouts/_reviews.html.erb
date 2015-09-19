@@ -45,8 +45,9 @@
               <li><a href="#">ICT</a></li>
               <li class="divider"></li>
               <li class="dropdown-header">Language exams</li>
-              <li><a href="#">IELTS</a></li>
-              <li><a href="#">TOEFL</a></li>
+              <% Category.all.each do |category| %>
+              <li><%= link_to category.name, tutorial_centres_path(category: category.name) %></li>
+              <% end %>
             </ul>
           </li>
           <li class="col-sm-3">

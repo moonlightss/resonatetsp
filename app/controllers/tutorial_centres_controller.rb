@@ -15,7 +15,7 @@ class TutorialCentresController < ApplicationController
 
   def index
     if params[:category].blank?
-      @tutorial_centres = TutorialCentre.all.order("created_at DESC")
+      @tutorial_centres = TutorialCentre.all
     else
       @category_id = Category.find_by(name: params[:category]).id
       @tutorial_centres = TutorialCentre.where(category_id: @category_id).order("created_at DESC")
