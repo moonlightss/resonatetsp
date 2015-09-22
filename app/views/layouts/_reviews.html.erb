@@ -32,21 +32,24 @@
           <li class="col-sm-3">
             <ul>
               <li class="dropdown-header">HKDSE</li>
-              <% Dse.all.each do |dse| %>
-              <li><%= link_to dse.name, tutorial_centres_path(dse: dse.name) %></li>
-              <% end %>
+              <li><a href="#">Mathematics</a></li>
+              <li><a href="#">English</a></li>
+              <li><a href="#">Chinese</a></li>
+              <li><a href="#">Physics</a></li>
+              <li><a href="#">Chemistry</a></li>
+              <li><a href="#">Biology</a></li>
+              <li><a href="#">BAFS</a></li>
+              <li><a href="#">Liberal Studies</a></li>
               <li class="divider"></li>
               <li class="dropdown-header">Language exams</li>
-              <% Category.all.each do |category| %>
-              <li><%= link_to category.name, tutorial_centres_path(category: category.name) %></li>
-              <% end %>
+              <li><a href="#">IELTS</a></li>
+              <li><a href="#">TOEFL</a></li>
             </ul>
           </li>
           <li class="col-sm-3">
             <ul>
               <li class="dropdown-header">GCE A-Level</li>
-              <li><a href="/tags/GCE%20Physics">Mathematics</a></li>
-
+              <li><a href="#">Mathematics</a></li>
               <li><a href="#">Chinese</a></li>
               <li><a href="#">Physics</a></li>
               <li><a href="#">Chemistry</a></li>

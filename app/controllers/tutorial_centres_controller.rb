@@ -102,7 +102,7 @@ class TutorialCentresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tutorial_centre_params
-      params.require(:tutorial_centre).permit(:name, :category_id, :address, :phone, :website, :image, :tag_list)
+      params.require(:tutorial_centre).permit(:name, :address, :phone, :website, :image, :tag_list)
     end
 end
 
