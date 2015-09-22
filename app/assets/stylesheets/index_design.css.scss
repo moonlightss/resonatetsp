@@ -22,12 +22,22 @@
 }
 
 .box .box-content {
+  
   padding: 16px;
   border-radius: 0 0 2px 2px;
   background-clip: padding-box;
   box-sizing: border-box;
-}
-.box .box-content p {
+  
+    p {
   color:#515c66;
   text-transform:none;
+      }
+    h4 {
+  color:#ffffff;
+  text-transform:none;
+      }
 }
+
+
+
+

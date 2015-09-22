@@ -18,6 +18,7 @@ gem 'figaro'
 gem "mini_magick"
 gem 'devise'
 gem 'searchkick'
+gem 'acts-as-taggable-on', '~> 3.4'
 
 group :development, :test do
   gem 'byebug'

@@ -31,9 +31,22 @@
                               <%= link_to tutorial_centre.website, tutorial_centre.website %>
                             </h5>
                             
-                            <hr/>                          
+                                                     
                             
-                            <h3><%= link_to "Learn more", tutorial_centre %> </h3>
+                            
+                            
+                            <h5>tags:
+                            <% tutorial_centre.tags.any? %>
+                              <% tutorial_centre.tags.each do |tag| %>
+                                <span class="label label-warning">
+                                  <%= link_to tag.name, tag_path(tag.name) %>
+                                </span>  
+                            <% end %>
+                            </h5>
+
+                            <hr/> 
+                            <h4><span class="label label-success"><%= link_to "Learn more", tutorial_centre %></span> </h4>
+
                         </div>
 
                     </div>

@@ -1,0 +1,24 @@
+<%= form_for(@dse) do |f| %>
+  <% if @dse.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dse.errors.count, "error") %> prohibited this dse from being saved:</h2>
+
+      <ul>
+      <% @dse.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: "form-control", placeholder: "English" %>
+  </div>
+
+  <br/>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
