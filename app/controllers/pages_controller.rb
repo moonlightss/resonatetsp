@@ -8,6 +8,6 @@ class PagesController < ApplicationController
   def contact
   end
 
-  def dse_chemistry
+  def new_index
   end 
 end

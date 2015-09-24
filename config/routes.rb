@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   get 'pages/contact'
 
-  get 'pages/dse_chemistry'
+  get 'pages/new_index'
 
   root 'tutorial_centres#index'
 
