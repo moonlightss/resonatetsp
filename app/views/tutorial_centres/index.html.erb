@@ -30,10 +30,7 @@
                               :
                               <%= link_to tutorial_centre.website, tutorial_centre.website %>
                             </h5>
-                            
-                                                     
-                            
-                            
+                  
                             
                             <h5>tags:
                             <% tutorial_centre.tags.any? %>
@@ -62,11 +59,9 @@
 </div>
 
             
-        
+<br>
 
-
-    
-    
+<%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
 
 <br>
 

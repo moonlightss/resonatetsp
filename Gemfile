@@ -20,6 +20,8 @@ gem 'devise'
 gem 'searchkick'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'bootstrap-sass'
+gem 'will_paginate', '~> 3.0.6'
+gem 'will_paginate-bootstrap'
 
 group :development, :test do
   gem 'byebug'

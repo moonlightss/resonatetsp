@@ -18,9 +18,9 @@ class TutorialCentresController < ApplicationController
 
 
     if params[:tag].present? 
-      @tutorial_centres = TutorialCentre.tagged_with(params[:tag])
+      @tutorial_centres = TutorialCentre.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 3)
     else
-      @tutorial_centres = TutorialCentre.all.order("created_at DESC")
+      @tutorial_centres = TutorialCentre.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 3)
     end 
 
      
