@@ -16,6 +16,8 @@ class TutorialCentre < ActiveRecord::Base
     belongs_to :dse
 
     acts_as_taggable # Alias for acts_as_taggable_on :tags
+
+  
   	
 
 
